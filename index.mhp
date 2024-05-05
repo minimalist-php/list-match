@@ -1,0 +1,21 @@
+find : module(`minimalist-php/list-find`)
+
+return function (parameters) use (find)
+    value : parameters[`value`]
+    default : parameters[`default`]
+    list : parameters[`list`]
+    matched : find([
+        list : list
+
+        iteration : function (parameters) use (value)
+            element : parameters[`element`]
+
+            return element[`case`] = value
+
+    ])
+
+    if not matched
+
+        return default
+
+    return matched[`assign`]
