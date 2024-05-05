@@ -50,7 +50,6 @@ return function ($parameters) use ($find) {
     ]);
 
     if (! $matched) {
-
         return $default;
     };
     return $matched["assign"];

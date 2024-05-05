@@ -15,7 +15,6 @@ return function (parameters) use (find)
     ])
 
     if not matched
-
         return default
 
     return matched[`assign`]
